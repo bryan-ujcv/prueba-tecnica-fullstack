@@ -1,7 +1,7 @@
 @extends('index')
 
 @section('content')
-<div>
+<div class="container">
     @foreach ($noticias as $todo)
 
     <div class="row py-1">
@@ -15,7 +15,7 @@
             <form action="{{ route('todos-destroy', [$todo->id]) }}" method="POST">
                 @method('DELETE')
                 @csrf
-                <button class="btn btn-danger btn-sm">Eliminar</button>
+                <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Eliminar</button>
             </form>
         </div>
     </div>
