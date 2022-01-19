@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container w-25 border p-4 mt-4">
+<div class="container border p-4 mt-4">
     <form action="{{route('agregar')}}" method="post">
         @csrf
         @if(session('success'))
@@ -16,21 +16,21 @@
 
         <div>
             <label for="titulo" class="form-label">Titulo de la Noticia</label>
-            <input type="text" name="titulo" class="form-control">
+            <input type="text" name="titulo" class="form-control"><br>
         </div>
         @error ('descripcion')
         <h6 class="alert alert-danger">{{$message}}</h6>
         @enderror
         <div>
             <label for="descripcion" class="form-label">Descripcion de la Noticia</label>
-            <input type="textbox" name="descripcion" class="form-control">
+            <textarea type="text" name="descripcion" class="form-control"></textarea><br>
         </div>
         @error ('url')
         <h6 class="alert alert-danger">{{$message}}</h6>
         @enderror
         <div>
             <label for="url" class="form-label">URL de la Imagen</label>
-            <input type="text" name="url" class="form-control">
+            <input type="text" name="url" class="form-control"><br>
         </div>
         <button type="submit" class="btn btn-primary"><i class="far fa-save"></i> Agregar</button>
     </form>
