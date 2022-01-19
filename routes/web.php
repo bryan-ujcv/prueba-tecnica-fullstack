@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NoticiasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/noticias', [NoticiasController::class, 'index'])->name('noticias');
+
+Route::post('/agregar', [NoticiasController::class, 'store'])->name('agregar');
+
+Route::get('/agregar', function () {
+    return view('agregar');
+})->name('agregar');
+
+Route::get('/noticias/{id}', [NoticiasController::class, 'show'])->name('noticia-edit');
+
+Route::patch('/noticias/{id}', [NoticiasController::class, 'update'])->name('noticia-update');
+
+Route::delete('/noticias/{id}', [NoticiasController::class, 'destroy'])->name('noticia-destroy');
