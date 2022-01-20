@@ -1,18 +1,20 @@
 @extends('index')
 
 @section('content')
-
+<div class="w-75 div_centrado">
+    <div class="card-body">
+        <div class="col-md-9">
+            <h3 class="card-title">Agregar Noticia</h3>
+        </div>
+    </div>
+</div>
 <div class="container border p-4 mt-4">
     <form action="{{route('agregar')}}" method="post">
         @csrf
-        @if(session('success'))
-        <h6 class="alert alert-success">{{session('success')}}</h6>
-        @endif
 
         @error ('titulo')
         <h6 class="alert alert-danger">{{$message}}</h6>
         @enderror
-
 
         <div>
             <label for="titulo" class="form-label">Titulo de la Noticia</label>
