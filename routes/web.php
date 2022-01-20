@@ -14,11 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/noticias', [NoticiasController::class, 'index'])->name('noticias');
+Route::get('/', [NoticiasController::class, 'index'])->name('noticias');
 
 Route::post('/agregar', [NoticiasController::class, 'store'])->name('agregar');
 
